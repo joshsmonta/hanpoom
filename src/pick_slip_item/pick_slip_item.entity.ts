@@ -11,7 +11,7 @@ export class PickSlipItem {
     @Column({ type: 'int' })
     item_id: number;
 
-    @Column({ type: 'int' })
+    @Column({ type: 'int', nullable: true })
     stock_id: number;
 
     @Column({ type: 'int' })

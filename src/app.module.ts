@@ -1,6 +1,4 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { PickSlipModule } from './pick_slip/pick_slip.module';
 import { PickSlip } from './pick_slip/pick_slip.entity';
@@ -26,7 +24,5 @@ import { PickSlipDate } from './pick_slip_date/pick_slip_date.entity';
     PickSlipItemModule,
     PickSlipDateModule,
   ],
-  controllers: [AppController],
-  providers: [AppService, PickSlipDateService],
 })
 export class AppModule { }
