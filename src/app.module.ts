@@ -12,7 +12,7 @@ import { PickSlipDate } from './pick_slip_date/pick_slip_date.entity';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
+      host: 'postgres-db',
       port: 5432,
       username: 'postgres',
       password: 'admin',

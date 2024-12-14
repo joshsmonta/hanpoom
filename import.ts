@@ -7,7 +7,7 @@ async function importCsvFileToTable(filePath: string, tableName: string): Promis
     // Connect to the PostgreSQL database
     const client = new Client({
         user: 'postgres', // Replace with your PostgreSQL username
-        host: 'localhost',     // Replace with your PostgreSQL host
+        host: 'postgres-db',     // Replace with your PostgreSQL host
         database: 'hanpoom', // Replace with your PostgreSQL database name
         password: 'admin', // Replace with your PostgreSQL password
         port: 5432,            // Replace with your PostgreSQL port
