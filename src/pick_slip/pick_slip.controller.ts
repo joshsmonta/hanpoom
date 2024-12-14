@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
 import { PickSlipService } from './pick_slip.service';
 import { CreateSlipDto } from './dto/create-slip.dto';
 
@@ -16,8 +16,18 @@ export class PickSlipController {
         return this.pickSlipService.create(body);
     }
 
-    @Get(':id')
-    async getSlip(@Param('id') id: number) {
-        return this.pickSlipService.findOne(id)
+    // @Get(':id')
+    // async getSlip(@Param('id') id: number) {
+    //     return this.pickSlipService.findOne(id)
+    // }
+
+    @Get('pre-orders')
+    async getPreOrderPickingSlips(
+        @Query('shippingDate') shippingDate: string,
+        @Query('status') status: string,
+        @Query('limit') limit: number,
+        @Query('offset') offset: number
+    ) {
+        return this.pickSlipService.getPreOrderPickingSlips(shippingDate, status, limit, offset);
     }
 }
