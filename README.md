@@ -26,14 +26,29 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-## Installation
+
+## Running the app (via Docker Compose)
+
+Make sure you already have Docker and Docker Compose in your machine. (double check the available ports in the `docker-compose.yml` file and make sure that it's not occupied by another process)
+
+```bash
+# Deploy Docker containers, if failed, try and run the command again
+$ docker-compose up --build -d
+
+# Access the shell container that hosts the app
+$ docker exec -it nestjs-api sh
+
+# Run the data import script to import the csv files to the database
+$ npm run import:db
+```
+
+## Running the app (locally)
+
+This method needs you to set the postgres db environment and variables inside `app.module.ts`
 
 ```bash
 $ npm install
 ```
-
-## Running the app
-
 ```bash
 # development
 $ npm run start
