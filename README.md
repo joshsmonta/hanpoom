@@ -60,16 +60,9 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+## Query Endpoint
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+GET http://localhost:3000/pick-slips/pre-orders?shippingDate=2024-03-06&status=not printed&limit=3&offset=0
 ```
 
